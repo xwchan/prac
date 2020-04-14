@@ -1,0 +1,21 @@
+{
+  "name": "prac",
+  "version": "1.0.0",
+  "description": "This is a practice project to build front-end engineering.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack --config webpack.config.js"
+
+  },
+  "keywords": [],
+  "author": "zxw",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
