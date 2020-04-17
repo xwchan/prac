@@ -1,27 +1,20 @@
-import _ from 'lodash';
-import printMe from './print.js';
-import './styles.css';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from './router/index.js';
+import App from './App.vue';
 
-function component() {
-  var element = document.createElement('div');
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+Vue.config.productionTip = false; //关闭控制台开发模式提示
 
-  var btn = document.createElement('button');
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+Vue.use(VueRouter);
+var router = new VueRouter({
+  mode: 'hash',
+  routes
+})
 
-  element.appendChild(btn);
+const app = document.createElement('div');
+document.body.appendChild(app);
 
-  return element;
-}
-
-document.body.appendChild(component());
-
-if(module.hot) {
-  module.hot.accept('./print.js', function() {
-    console.log('Accepting the updated printMe module!');
-    // printMe();
-    document.body.removeChild(element);
-    document.body.appendChild(component()); 
-  })
-}
+new Vue({
+  render: h => h(App),
+  router
+}).$mount(app)

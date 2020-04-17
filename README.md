@@ -53,6 +53,8 @@ webpack.config.js说明
 + webpack只认识js和json文件，需要加入loaders识别各种文件，在module > rules中设置，test定义文件类型，use定义使用哪个loader去加载文件。webpack文档有误 例如：/\.css$/中‘.’无须转义，正确方式如下
   - test: /.css$/
 
++ .vue文件，需要安装less、less-loader、css-loader、vue-style-loader、style-loader
+
 ```
 
 # 配置git
@@ -64,7 +66,9 @@ webpack.config.js说明
 
 prac
   |---- package.json   # 项目配置信息
-  |---- /dist          # 分发代码（构建过程产生的代码最小化和优化后的“输出”目录）
-  |---- /src           # 源代码
-    |---- index.js       # 入口文件
+  |---- webpack.config.js #webpack配置文件
+  |---- dist          # 分发代码（构建过程产生的代码最小化和优化后的“输出”目录）
+  |---- node_modules  # 依赖包
+  |---- src           # 源代码
+    |---- 
 ```

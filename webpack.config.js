@@ -1,24 +1,43 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // 自动合成index.html
-const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 构建时先清除输出文件夹
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // 打包输出HTML文件
+const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 构建时先清除bundle文件夹
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-  },
-  devtool: 'inline-source-map',
-  devServer: {
+  mode: 'development',
+  entry: path.resolve(__dirname, 'src/index.js'), //入口文件
+  devtool: 'inline-source-map', //报错可提示源文件
+  devServer: {  // webpack-dev-server配置项
     contentBase: './dist',
-    hot: true,
+    hot: true,  // 热更新
     host: 'localhost',
-    port: 5000
+    port: 8080
   },
   module: {
     rules: [
       {
+        test: /.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            cacheDirectory: true
+          }
+        }
+      },
+      {
+        test: /.vue$/,
+        use: ['vue-loader']
+      },
+      {
         test: /.css$/,
-        use: ['style-loader','css-loader']
+        use: ['vue-style-loader','style-loader','css-loader']
+      },
+      {
+        test: /.less$/,
+        use: ['vue-style-loader','style-loader','css-loader','less-loader']
       },
       {
         test: /.(png|svg|jpg|gif)$/,
@@ -27,32 +46,29 @@ module.exports = {
       {
         test: /.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
-      },
-      {
-        test: /.(csv|tsv)$/,
-        use: ['csv-loader']
-      },
-      {
-        test: /.xml$/,
-        use: ['xml-loader']
-      },
-      {
-        test: /.vue$/,
-        use: ['vue-loader']
       }
     ]
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      title: 'Document',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1.0'
+      },
+      minify: {
+        removeComments: true, //移除注释
+        collapseWhitespace: true, //删除空白符与换行符
+        minifyCSS: true,  //压缩内联CSS
+        minifyJS: true, //压缩内联JS
+      }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new VueLoaderPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
-    chunkFilename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
-  },
-  mode: "production",   // 压缩输出
+  }
 };
 
