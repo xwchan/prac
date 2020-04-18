@@ -1,8 +1,19 @@
 const routes = [
   {
-    path: '/test',
-    name: 'test',
-    component: require('../test/index.vue').default
+    path: '/',
+    name: 'guide',
+    component: require('../content/guide.vue').default
+  },
+  {
+    path: '/content',
+    name: 'content',
+    component: require('../content/index.vue').default,
+    children: [
+      {
+        path: 'test',
+        component: require('../content/test/index.vue').default
+      }
+    ]
   }
 ]
 
