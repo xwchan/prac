@@ -7,14 +7,19 @@ const routes = [
   {
     path: '/content',
     name: 'content',
-    component: require('../content/index.vue').default,
+    component: () => import(/* webpackChunkName: "notes" */'../content/index.vue'),
     children: [
       {
         path: 'test',
-        component: require('../content/test/index.vue').default
+        component: () => import(/* webpackChunkName: "notes" */'../content/test/index.vue')
       }
     ]
-  }
+  },
+  // {
+  //   path: '/try',
+  //   name: 'try',
+  //   component: require('../content/css-cases/loading.vue').default
+  // }
 ]
 
 export default routes;

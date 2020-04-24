@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import asideBar from '../components/asideBar.vue';
+import asideBar from '../components/aside-bar.vue';
 
 export default {
   name: 'contentLayout',

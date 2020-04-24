@@ -29,5 +29,6 @@ export default {
 <style lang="less" scoped>
 nav {
   float: left;
+  width: 300px;
 }
 </style>

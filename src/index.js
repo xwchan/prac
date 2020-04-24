@@ -9,10 +9,7 @@ Vue.component('vue-markdown', VueMarkdown);
 Vue.config.productionTip = false; //关闭控制台开发模式提示
 
 Vue.use(VueRouter);
-var router = new VueRouter({
-  mode: 'hash',
-  routes
-})
+var router = new VueRouter({routes})
 
 const app = document.createElement('div');
 document.body.appendChild(app);

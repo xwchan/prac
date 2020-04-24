@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 打包输出HTML文件
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 构建时先清除bundle文件夹
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const marked = require("marked");
+const renderer = new marked.Renderer();
 
 module.exports = {
   mode: 'development',
@@ -17,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -28,23 +30,38 @@ module.exports = {
         }
       },
       {
-        test: /.vue$/,
+        test: /\.vue$/,
         use: ['vue-loader']
       },
       {
-        test: /.css$/,
+        test: /\.md$/,
+        use: [
+          {
+              loader: "html-loader"
+          },
+          {
+              loader: "markdown-loader",
+              options: {
+                  pedantic: true,
+                  renderer
+              }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
         use: ['vue-style-loader','style-loader','css-loader']
       },
       {
-        test: /.less$/,
+        test: /\.less$/,
         use: ['vue-style-loader','style-loader','css-loader','less-loader']
       },
       {
-        test: /.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
       },
       {
-        test: /.(woff|woff2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: ['file-loader']
       }
     ]
@@ -52,7 +69,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Document',
+      title: '笔记',
       meta: {
         viewport: 'width=device-width, initial-scale=1.0'
       },
