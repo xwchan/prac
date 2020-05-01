@@ -7,7 +7,7 @@
     "build": "npx webpack --config webpack.config.js",
     "dev": "webpack-dev-server --open chrome"
   },
-  "keywords": [],
+  "keywords": ["W3C"],
   "author": "zxw",
   "license": "ISC",
   "devDependencies": {

@@ -2,31 +2,36 @@
   <div>
     <header style="text-align: center;"><h1>This is the guide page!</h1></header>
     <main>
-      <router-link class="cart" v-for="(item, inx) in toc" :key="inx" :to=item.link>
-      {{item.title}}
-      </router-link>
+      <div class="cart" v-for="(item, inx) in modules" :key="inx">
+        <router-link :to="{path: 'note', query: {md: item.md}}">
+          {{item.module}}
+        </router-link>
+      </div>
     </main>
-    
   </div>
 </template>
 
 <script>
+import * as enums from './enums.js';
+
 export default {
   name: 'guide',
   data() {
     return {
       toc: [
-        {title: "test",link: '/content/test'},
         {title: "color", link: '/content/#'},
         {title: "selector", link: '/content/#'},
         {title: "flex", link: '/content/#'},
         {title: "transform", link: '/content/#'},
         {title: "transition", link: '/content/#'},
         {title: "animation", link: '/content/#'},
-        {title: "unit", link: '/content/#'},
-      ]
+      ],
+      modules: enums.moduleMap
     }
   },
+  created() {
+    
+  }
 }
 </script>
 
@@ -44,6 +49,8 @@ main {
     margin: 10px;
     background: rgba(123, 123, 123, .1);
     text-decoration: none;
+
   }
+  
 }
 </style>

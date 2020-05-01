@@ -5,15 +5,9 @@ const routes = [
     component: require('../content/guide.vue').default
   },
   {
-    path: '/content',
-    name: 'content',
-    component: () => import(/* webpackChunkName: "notes" */'../content/index.vue'),
-    children: [
-      {
-        path: 'test',
-        component: () => import(/* webpackChunkName: "notes" */'../content/test/index.vue')
-      }
-    ]
+    path: '/note',
+    name: 'note',
+    component: () => import(/* webpackChunkName: "notes" */'../content/note.vue')
   },
   // {
   //   path: '/try',
