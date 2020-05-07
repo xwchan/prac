@@ -7,7 +7,9 @@
     "build": "npx webpack --config webpack.config.js",
     "dev": "webpack-dev-server --open chrome"
   },
-  "keywords": ["W3C"],
+  "keywords": [
+    "W3C"
+  ],
   "author": "zxw",
   "license": "ISC",
   "devDependencies": {
@@ -17,6 +19,9 @@
     "babel-runtime": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
@@ -36,5 +41,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.15"
-  }
+  },
+  "eslintConfig": {}
 }
