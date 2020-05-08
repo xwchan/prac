@@ -1,11 +1,8 @@
-[值与单位模块](https://www.w3.org/TR/css-values-3/)       Level 3
+[值与单位模块](https://www.w3.org/TR/css-values-3/)       
 
-current status | CR
----|---
-next status | PR
-
-
-
+> Level 3 >> CR <sub>current status</sub> >> PR <sub>next status</sub>
+> 
+> <sub>[Level 4 >> FPWD <sub>current status</sub> >> WD <sub>next status</sub>](https://www.w3.org/TR/css-values-4/)</sub>
 
 ### 语法
 > CSS属性值包含关键字、数据类型（放在‘<‘与’>‘之间）以及组合关系

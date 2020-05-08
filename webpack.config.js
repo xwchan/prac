@@ -8,7 +8,7 @@ const renderer = new marked.Renderer();
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/index.js'), //入口文件
+  entry: path.resolve(__dirname, 'src/main.js'), //入口文件
   devtool: 'inline-source-map', //报错可提示源文件
   devServer: {  // webpack-dev-server配置项
     contentBase: './dist',

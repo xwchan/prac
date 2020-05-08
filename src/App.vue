@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 路由出口 -->
     <router-view></router-view>
   </div>
 </template>
@@ -10,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style>
 body {
   margin: 0;
   padding: 0;

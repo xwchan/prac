@@ -1,19 +1,14 @@
 const routes = [
   {
     path: '/',
-    name: 'guide',
-    component: require('../content/guide.vue').default
+    name: 'root',
+    component: require('../notes/index.vue').default
   },
   {
     path: '/note',
     name: 'note',
-    component: () => import(/* webpackChunkName: "notes" */'../content/note.vue')
-  },
-  // {
-  //   path: '/try',
-  //   name: 'try',
-  //   component: require('../content/css-cases/loading.vue').default
-  // }
+    component: () => import(/* webpackChunkName: "notes" */'../notes/index.vue')
+  }
 ]
 
 export default routes;
