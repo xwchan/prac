@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // 打包输出HTML文
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 构建时先清除bundle文件夹
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const marked = require("marked");
-const renderer = new marked.Renderer();
+const markdownRenderer = new marked.Renderer();
 
 module.exports = {
   mode: 'development',
@@ -42,8 +42,7 @@ module.exports = {
           {
               loader: "markdown-loader",
               options: {
-                  pedantic: true,
-                  renderer
+                  markdownRenderer
               }
           }
         ]
