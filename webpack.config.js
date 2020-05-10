@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 打包输出HTML文件
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 构建时先清除bundle文件夹
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const marked = require("marked");
+const marked = require("marked"); // markdown-loader依赖
 const markdownRenderer = new marked.Renderer();
 
 module.exports = {
