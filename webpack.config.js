@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'inline-source-map', //报错可提示源文件
   devServer: {  // webpack-dev-server配置项
     contentBase: './dist',
-    hot: true,  // 热更新
+    // hot: true,  // 开启这一项反而页面不会自动刷新了
     host: 'localhost',
     port: 8080
   },

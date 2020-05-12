@@ -53,9 +53,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url('../assets/css/github.css');
-@aside-width: 350px;
-@max-page-width: 1920px;
+@import url('../assets/css/variable.less');
 
 .container {
   width: 100%;
@@ -63,12 +61,13 @@ export default {
   min-width: @aside-width;
   aside {
     position: fixed;
-    height: 100vh;
+    width: @aside-width;
+    height: calc(100vh - @top-bar-height);
     overflow-y: auto;
     .cart {
       display: flex;
       flex-direction: column;
-      width: @aside-width;
+      width: 100%;
       height: 200px;
       border: 1px solid rgba(0,0,0, 0.2);
       border-radius: 5px;
@@ -76,12 +75,12 @@ export default {
         margin: 10px auto;
         font-size: 1.5em;
       }
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
       .aside-markdown-body {
         transform: scale(0.8, 0.8);
       }
-    }
-    .cart:not(:first-child) {
-      margin-top: 20px;
     }
   }
   main {
