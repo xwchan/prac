@@ -124,7 +124,7 @@
 > 
 > 初始值：nowrap
 > 
-> 注：换行与wrting-mode有关，horizontal-tb（水平，从上至下）| vertical-rl(竖直，从右向左)
+> 注：换行与writing-mode有关，horizontal-tb（水平，从上至下）| vertical-rl(竖直，从右向左) | vertical-lr(竖直，从左到右)
 
 3. flex-flow（速记，代替1.2）
 > flex-direction 和 flex-wrap的速记

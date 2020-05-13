@@ -12,9 +12,9 @@
 > 不透明度
 ### 值
 #### 关键字
-1. 基础关键字： aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.
+1. [基础关键字](https://www.w3.org/TR/css-color-3/#html4)： aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.
 2. 大小写不敏感
-3. 扩展关键字：aliceblue, antiquewhite, [...](https://www.w3.org/TR/css-color-3/#svg-color)
+3. [扩展关键字](https://www.w3.org/TR/css-color-3/#svg-color)：aliceblue, antiquewhite, [...](https://www.w3.org/TR/css-color-3/#svg-color)
 
 #### 数值
 ##### 1. RGB

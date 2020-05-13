@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import url('./assets/css/common.less');
 @import url('./assets/css/github.css');
 @import url('./assets/css/variable.less');
 
