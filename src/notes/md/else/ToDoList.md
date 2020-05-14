@@ -5,6 +5,8 @@
 - 样式问题
     + 我扒下了Github Markdown风格的github.css
 - 一些小例子比如loading、 半个像素(scale)， 放大镜(scale)的小例子的实现
-
+    + loading（传统div画的）
+    + 半个像素（px、scale、box-shadow）
 - promise
 - 正则
+- canvas 和 svg

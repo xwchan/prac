@@ -8,7 +8,7 @@
       </nav>
     </aside>
     <main>
-      
+      <!-- 加载中 -->
       <div class="loading" v-if="active === 0">
         <header>1x</header>
         <Loading1 style="text-align: center;"></Loading1>
@@ -19,24 +19,24 @@
         <header>2x</header>
         <Loading1 :initScale=2 initColor="#4183c4"  style="text-align: center;"></Loading1>
       </div>
-      
+      <!-- 半像素 -->
       <div class="half-px" v-if="active === 1">
-        <div>1px</div>
+        <div>height: 1px</div>
         <div style="width: 100%; height: 1px; background-color: black;"></div>
         <br>
         
-        <div>scaleY(0.5)</div>
+        <div>height: 1px + scaleY(0.5)</div>
         <div style="width: 100%; height: 1px; background-color: black; transform-origin: 50% 100%; transform: scaleY(0.5); "></div>
         <br>
         
-        <div>0.5px</div>
+        <div>height: 0.5px</div>
         <div style="width: 100%; height: 0.5px; background-color: black;"></div>
         <br>
         
         <div>box-shadow: 0px 0.5px 0 black;</div>
         <div style="width: 100%; height: 1px; background-color:transparent; box-shadow: 0px 0.5px 0 black;"></div>
       </div>
-
+      <!-- 放大镜 -->
       <div class="magnifing-glass" v-if="active === 2">
 
       </div>
