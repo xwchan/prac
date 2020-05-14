@@ -1,5 +1,12 @@
 export const modules = [
   {
+    module: 'CSS Introduction W3C',
+    text: '简介',
+    level: 3,
+    md: 'Introduction',
+    url: 'https://www.w3.org/TR/css-2018/'
+  },
+  {
     module: 'Values and Units',
     text: '值与单位',
     level: 3,

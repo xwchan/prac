@@ -33,7 +33,7 @@ export default {
   computed: {
     html: function() {
       let md = this.$route.query.md || this.modulesList[0].md || undefined;
-      return md ? require(`../notes/md/${md}.md`) : '暂无内容';
+      return md ? require(`../notes/md/css/${md}.md`) : '暂无内容';
     }
   },
   created() {
@@ -45,7 +45,7 @@ export default {
     },
     initTOC() {
       for(let it of this.modulesList){
-        this.htmls.push(require(`../notes/md/${it.md}.md`));
+        this.htmls.push(require(`../notes/md/css/${it.md}.md`));
       }
     }
   }
