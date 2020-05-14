@@ -50,27 +50,6 @@ export default {
   0% {
     transform: rotate(0);
   }
-  12.5% {
-    tramsform: rotate(45deg);
-  }
-  25% {
-    tramsform: rotate(45deg * 2);
-  }
-  37.5% {
-    tramsform: rotate(45deg * 3);
-  }
-  50% {
-    tramsform: rotate(45deg * 4);
-  }
-  62.5% {
-    tramsform: rotate(45deg * 5);
-  }
-  75% {
-    tramsform: rotate(45deg * 6);
-  }
-  87.5% {
-    tramsform: rotate(45deg * 7);
-  }
   100% {
     transform: rotate(1turn);
   }
@@ -79,7 +58,7 @@ export default {
   .loading-container {
     display: inline-flex;
     flex-direction: column;
-    animation: loading 1s steps(8, jump-start) 0s infinite; // 没用linear，感觉像在转风车
+    animation: loading 1s steps(8, end) 0s infinite normal forwards; // 没用linear，感觉像在转风车
     transition: rotate 0.5s linear;
     div {
       display: flex;
