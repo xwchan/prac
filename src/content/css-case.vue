@@ -35,9 +35,29 @@
         
         <div>box-shadow: 0px 0.5px 0 black;</div>
         <div style="width: 100%; height: 1px; background-color:transparent; box-shadow: 0px 0.5px 0 black;"></div>
+        <br>
+
+        <div>linear-gradient</div>
+        <div style="width: 100%; height: 1px; background: linear-gradient(black, transparent);"></div>
+      </div>
+      <!-- 正方形 -->
+      <div class="square" v-if="active === 2">
+        <div>padding / margin + &lt;percentage&gt;</div>
+        <div style="width: 100%;">
+          <span style="display: inline-block; background-color: lightblue; padding: 10%;"></span>
+        </div>
+        <br>
+        
+        <div>vh / vw</div>
+        <div>
+          <span style="display: inline-block; background-color: lightblue; height: 10vw; width: 10vw;"></span>
+        </div>
+        <br>
+
+        
       </div>
       <!-- 放大镜 -->
-      <div class="magnifing-glass" v-if="active === 2">
+      <div class="magnifing-glass" v-if="active === 3">
 
       </div>
     </main>
@@ -56,6 +76,7 @@ export default {
       cases: [
         '加载中',
         '半像素线',
+        '正方形'
       ]
     }
   },

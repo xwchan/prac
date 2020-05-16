@@ -233,7 +233,7 @@ dppx | Dots per px unit | 每像素点数 | 1dppx = 96dpi
               [ [ top | bottom ] <length-percentage> ]
         ]
 
-### 函数
+### 函数(考虑消耗，慎用)
 1. calc()：计算值
     - ‘+’‘-’左右必须有空格，‘*’‘/’可以不用；UA应至少支持20项数学表达式，超出支持范围则无效
     - 数学表达式的类型范围：< length>，< frequency>，< angle>，< time>，< percentage>，< number>或< integer>
@@ -249,7 +249,7 @@ dppx | Dots per px unit | 每像素点数 | 1dppx = 96dpi
             width: 0px;
 
 2. attr()：返回属性值
-    - attr( <attr-name> <type-or-unit>? [ , <attr-fallback> ]? )
+    - attr( < attr-name > < type-or-unit >? [ , < attr-fallback > ]? )
 
             p:before {
                 content:attr(data-foo) " ";
