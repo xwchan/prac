@@ -225,8 +225,4 @@
 > 
 > 初始值：auto（继承父级align-item的值）
 
-    ![](https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg)
-
-
-### flex布局算法
-
+  ![](https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg)

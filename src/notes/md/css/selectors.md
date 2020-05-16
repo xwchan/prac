@@ -353,11 +353,11 @@ E ~ F | 元素F（在元素E之后） | 后继选择器 | 3
 
         h1，h2..foo，h3 {font-family：sans-serif} /*整个无效*/
 
-### 选择器的specificity
+### 选择器的specificity (权重？)
 1. ID选择器的数量 = a
 2. 类选择器、属性选择器、伪类选择器 = b
 3. 类型选择器、伪元素选择器 = c
-4. 无视通用选择器
+4. 忽略通用选择器
 5. :not()内的选择器计数同上，但是not()伪类不参与计数
 
 specificity = a 拼接 b 拼接 c
@@ -373,4 +373,3 @@ specificity = a 拼接 b 拼接 c
     #s12:not(FOO)   /* a=1 b=0 c=1 -> specificity = 101 */
 
 - 允许重复出现同一简单选择器，增加specificity
-
